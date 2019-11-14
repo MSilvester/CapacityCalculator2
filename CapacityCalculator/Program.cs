@@ -53,110 +53,112 @@ namespace Capacity_Calculator
             Worker tomas = new Worker("Tomas", 1.87, 12);
             Worker mathias = new Worker("Mathias", 1.87, 15);
 
-            double grCap, anCap, seCap, stCap, euCap, toCap, maCap, grStl, anStl, seStl, stStl, euStl, toStl, maStl;
+            double sumCap = 0, sumStl = 0;
 
-
+            Start1:
             Console.Write("Is {0} present? (y/n): ", gregor.Name);
             string gr = Console.ReadLine();
 
-            if (gr == "y")
+            if (gr.ToLower() == "y")
             {
-                grCap = gregor.Capacity;
-                grStl = gregor.StundenLohn;
+                sumCap += gregor.Capacity;
+                sumStl += gregor.StundenLohn;
             }
-            else
+            else 
             {
-                grCap = 0;
-                grStl = 0;
+                sumCap += 0;
+                sumStl += 0;
             }
+          
 
 
             Console.Write("Is {0} present? (y/n): ", andrej.Name);
             string an = Console.ReadLine();
 
-            if (an == "y")
+            if (an.ToLower() == "y")
             {
-                anCap = andrej.Capacity;
-                anStl = andrej.StundenLohn;
+                sumCap += andrej.Capacity;
+                sumStl += andrej.StundenLohn;
             }
-            else
+            else 
             {
-                anCap = 0;
-                anStl = 0;
+                sumCap += 0;
+                sumStl += 0;
             }
+          
 
             Console.Write("Is {0} present? (y/n): ", sebastian.Name);
             string se = Console.ReadLine();
 
-            if (se == "y")
+            if (se.ToLower() == "y")
             {
-                seCap = sebastian.Capacity;
-                seStl = sebastian.StundenLohn;
+                sumCap += sebastian.Capacity;
+                sumStl += sebastian.StundenLohn;
             }
-            else
+            else 
             {
-                seCap = 0;
-                seStl = 0;
+                sumCap += 0;
+                sumStl += 0;
             }
+            
 
             Console.Write("Is {0} present? (y/n): ", stefan.Name);
             string st = Console.ReadLine();
 
-            if (st == "y")
+            if (st.ToLower() == "y")
             {
-                stCap = stefan.Capacity;
-                stStl = stefan.StundenLohn;
+                sumCap += stefan.Capacity;
+                sumStl += stefan.StundenLohn;
             }
-            else
-            {
-                stCap = 0;
-                stStl = 0;
+            else { 
+                sumCap += 0;
+                sumStl += 0;
             }
+            
 
             Console.Write("Is {0} present? (y/n): ", eugen.Name);
             string eu = Console.ReadLine();
 
-            if (eu == "y")
+            if (eu.ToLower() == "y")
             {
-                euCap = eugen.Capacity;
-                euStl = eugen.StundenLohn;
+                sumCap += eugen.Capacity;
+                sumStl += eugen.StundenLohn;
             }
-            else
+            else  
             {
-                euCap = 0;
-                euStl = 0;
+                sumCap += 0;
+                sumStl += 0;
             }
 
             Console.Write("Is {0} present? (y/n): ", tomas.Name);
             string to = Console.ReadLine();
 
-            if (to == "y")
+            if (to.ToLower() == "y")
             {
-                toCap = tomas.Capacity;
-                toStl = tomas.StundenLohn;
+                sumCap += tomas.Capacity;
+                sumStl += tomas.StundenLohn;
             }
-            else
+            else  
             {
-                toCap = 0;
-                toStl = 0;
+                sumCap += 0;
+                sumStl += 0;
             }
+
             Console.Write("Is {0} present? (y/n): ", mathias.Name);
             string ma = Console.ReadLine();
 
-            if (ma == "y")
+            if (ma.ToLower() == "y")
             {
-                maCap = mathias.Capacity;
-                maStl = mathias.StundenLohn;
+                sumCap += mathias.Capacity;
+                sumStl += mathias.StundenLohn;
             }
-            else
+            else 
             {
-                maCap = 0;
-                maStl = 0;
+                sumCap += 0;
+                sumStl += 0;
             }
-
-            double totalCapHr = (grCap + anCap + seCap + stCap + euCap + toCap + maCap) * 8;       // Total capacity per day according to attendance
-            double totalStl = grStl + anStl + seStl + stStl + euStl + toStl + maStl;               // Total cost of labor for one hour. 
-            return (totalCapHr, totalStl);
+            
+            return ((sumCap * 8), sumStl);
 
 
 
